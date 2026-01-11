@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual env
+genesis_env/
+venv/
+.env
+
+# Logs, models, datasets
+logs/
+*.pt
+*.pth
+*.ckpt
+events.out.tfevents.*
+model_*.pt
+
+# Images / large media
+imgs/
+share/
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store
+
+# Pytest / cache
+.pytest_cache/
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker / build files
+docker/
+Dockerfile*
+
+# Other
+*.zip
+*.tar.gz
+
+# Keep examples and genesis source tracked
+# (remove from ignore if you prefer)
+
