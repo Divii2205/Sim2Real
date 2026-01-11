@@ -1,3 +1,20 @@
-logs/
-genesis_env/
+# Python
 __pycache__/
+*.pyc
+
+# Virtual envs
+genesis_env/
+venv/
+.env/
+
+# Training outputs
+logs/
+checkpoints/
+
+# Models & configs
+*.pt
+*.pkl
+
+# OS
+.DS_Store
+Thumbs.db

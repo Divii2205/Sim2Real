@@ -148,11 +148,11 @@ def get_cfgs():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--exp_name", type=str, default="go2-walking")
-    parser.add_argument("-B", "--num_envs", type=int, default=4096)
-    parser.add_argument("--max_iterations", type=int, default=26)
+    parser.add_argument("-B", "--num_envs", type=int, default=150)
+    parser.add_argument("--max_iterations", type=int, default=101)
     args = parser.parse_args()
 
-    gs.init(backend=gs.gpu, precision="32", logging_level="warning", performance_mode=True)
+    gs.init(backend=gs.cpu)
 
     log_dir = f"logs/{args.exp_name}"
     env_cfg, obs_cfg, reward_cfg, command_cfg = get_cfgs()

@@ -19,11 +19,11 @@ class Agent:
         Users can modify the path to load their specific submitted model.
         """
         # Path to the model checkpoint (submitted by user)
-        self.model_path = "checkpoints/model_25.pt"
+        self.model_path = "logs/go2-walking/model_100.pt"
         self.model_path = os.path.join(os.getcwd(), self.model_path)
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cpu")
 
-        config_path = "checkpoints/cfgs.pkl"
+        config_path = "logs/go2-walking/cfgs.pkl"
         config_path = os.path.join(os.getcwd(), config_path)
         with open(config_path, 'rb') as f:
             cfg = pickle.load(f)
