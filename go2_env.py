@@ -307,3 +307,11 @@ class Go2Env:
     def _reward_base_height(self):
         # Penalize base height away from target
         return torch.square(self.base_pos[:, 2] - self.reward_cfg["base_height_target"])
+    
+    def _reward_lin_vel_y(self):
+        # Penalize sideways motion (y direction)
+        return torch.square(self.base_lin_vel[:, 1])
+
+    def _reward_ang_vel_xy(self):
+        # Penalize roll & pitch angular velocity (stability + symmetry)
+        return torch.sum(torch.square(self.base_ang_vel[:, :2]), dim=1)

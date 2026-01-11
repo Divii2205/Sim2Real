@@ -123,16 +123,18 @@ def get_cfgs():
         },
     }
     reward_cfg = {
-        "tracking_sigma": 0.25,
-        "base_height_target": 0.3,
-        "feet_height_target": 0.075,
-        "reward_scales": {
-            "tracking_lin_vel": 1.0,
-            "tracking_ang_vel": 0.2,
-            "lin_vel_z": -1.0,
-            "base_height": -50.0,
-            "action_rate": -0.005,
-            "similar_to_default": -0.1,
+      "tracking_sigma": 0.25,
+      "base_height_target": 0.35,
+      "feet_height_target": 0.075,
+      "reward_scales": {
+          "tracking_lin_vel": 3.0,     # forward
+          "tracking_ang_vel": 1.5,     # yaw discipline
+          "lin_vel_y": -5.0,           # lateral drift killer
+          "lin_vel_z": -0.5,           # vertical stability
+          "ang_vel_xy": -2.0,          # roll & pitch stability
+          "base_height": -50.0,
+          "action_rate": -0.005,
+          "similar_to_default": -0.1,
         },
     }
     command_cfg = {
