@@ -315,3 +315,7 @@ class Go2Env:
     def _reward_ang_vel_xy(self):
         # Penalize roll & pitch angular velocity (stability + symmetry)
         return torch.sum(torch.square(self.base_ang_vel[:, :2]), dim=1)
+
+    def _reward_lateral_move(self):
+        # Heavily penalize side-to-side velocity
+        return torch.square(self.base_lin_vel[:, 1])

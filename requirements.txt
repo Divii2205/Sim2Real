@@ -1,4 +1,3 @@
 torch
 numpy
-genesis
 rsl-rl-lib==2.2.4

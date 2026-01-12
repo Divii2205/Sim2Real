@@ -6,9 +6,9 @@ import os
 
 class Agent:
     command_cfg = {
-        "kp":20.0,
-        "kd":0.5,
-        "lin_vel_x_range": [0.6, 0.6],
+        "kp":45.0,
+        "kd":1.5,
+        "lin_vel_x_range": [0.5, 4.5],
         "lin_vel_y_range": [0.0, 0.0],
         "ang_vel_range": [0.0, 0.0],
     }
@@ -19,7 +19,7 @@ class Agent:
         Users can modify the path to load their specific submitted model.
         """
         # Path to the model checkpoint (submitted by user)
-        self.model_path = "checkpoints/model_100.pt"
+        self.model_path = "checkpoints/model_300.pt"
         self.model_path = os.path.join(os.getcwd(), self.model_path)
         self.device = torch.device("cpu")
 
